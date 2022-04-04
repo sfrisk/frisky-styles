@@ -1,0 +1,39 @@
+@mixin darktheme {
+  --color-backgroundColor: var(--color-gray-800);
+  --color-textColor: var(--color-gray-000);
+  --color-primaryColor: var(--color-purple-400);
+  --color-informationColor: var(--color-cyan-500);
+  --color-warningColor: var(--color-orange-400);
+  --color-successColor: var(--color-green-400);
+  --color-destructiveColor: var(--color-red-400);
+  --color-grayColor: var(--color-gray-300);
+  --color-activeColor: var(--color-cyan-500);
+  --color-focusColor: var(--color-purple-200);
+
+  --color-linkColor: var(--color-cyan-500);
+  --color-linkHoverColor: var(--color-cyan-400);
+  --color-linkActiveColor: var(--color-cyan-200);
+
+  --color-buttonPrimaryColor :var(--color-gray-000);
+  --color-buttonPrimaryBackgroundColor: var(--color-primaryColor);
+  --color-buttonPrimaryBorder: var(--color-primaryColor);
+
+  --color-buttonSecondaryColor :var(--color-primaryColor);
+  --color-buttonSecondaryBackgroundColor: var(--color-backgroundColor);
+  --color-buttonSecondaryBorder: var(--color-primaryColor);
+
+  --color-buttonDestructiveColor :var(--color-gray-000);
+  --color-buttonDestructiveBackgroundColor: var(--color-destructiveColor);
+  --color-buttonDestructiveBorder: var(--color-destructiveColor);
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include darktheme();
+  }
+}
+
+.dark {
+  @include darktheme();
+}

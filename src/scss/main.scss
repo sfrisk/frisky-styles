@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+@import "./base/reset.scss";
+
+@import "./base/base-tokens.scss";
+@import "./base/light-theme.scss";
+@import "./base/dark-theme.scss";
+
+html, body {
+  background: var(--color-backgroundColor);
+  color: var(--color-textColor);
+  font-family: var(--font-serif);
+}
+
+a {
+  color: var(--color-linkColor);
+  &:hover {
+    color: var(--color-linkHoverColor);
+  }
+  &:active {
+    color: var(--color-linkActiveColor);
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}

@@ -1,0 +1,335 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Themes/Themes" />
+
+<style>{`
+
+.theme-palette__table {
+  width: 100%;
+}
+
+.theme-palette__table .light,
+.theme-palette__table .dark {
+  vertical-align: middle;
+  padding: 10px;
+  text-align: center;
+}
+
+.theme-palette__title {
+  font-size: 16px;
+  font-weight: bold;
+  vertical-align: middle;
+  color: var(--color-textColor) !important;
+}
+
+.theme-palette {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+.color-backgroundColor {
+  background: var(--color-backgroundColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-textColor {
+  background: var(--color-textColor);
+  border: 1px solid var(--color-backgroundColor);
+}
+
+.color-primaryColor {
+  background: var(--color-primaryColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-informationColor {
+  background: var(--color-informationColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-backgroundColor {
+  background: var(--color-backgroundColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-warningColor {
+  background: var(--color-warningColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-backgroundColor {
+  background: var(--color-backgroundColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-successColor {
+  background: var(--color-successColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-destructiveColor {
+  background: var(--color-destructiveColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-grayColor {
+  background: var(--color-grayColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-activeColor {
+  background: var(--color-activeColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-focusColor {
+  background: var(--color-focusColor);
+  border: 1px solid var(--color-textColor);
+}
+
+.color-linkColor {
+  background: var(--color-linkColor);
+  border: 1px solid var(--color-textColor);
+}
+.color-linkHoverColor {
+  background: var(--color-linkHoverColor);
+  border: 1px solid var(--color-textColor);
+}
+.color-linkActiveColor {
+  background: var(--color-linkActiveColor);
+  border: 1px solid var(--color-textColor);
+}
+
+
+`}</style>
+
+# Theme
+
+We use css variables for defining our theme specific colors. To toggle between the 
+different themes, use the theme switcher above.
+
+## Semantic Colors
+
+<table class="theme-palette__table">
+  <thead>
+    <tr>
+      <th>CSS Variable</th>
+      <th class="light">Light Theme</th>
+      <th class="dark">Dark Theme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="theme-palette__title">
+        --color-backgroundColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-backgroundColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-backgroundColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-textColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-textColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-textColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-primaryColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-primaryColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-primaryColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-informationColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-informationColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-informationColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-warningColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-warningColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-warningColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-successColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-successColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-successColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-destructiveColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-destructiveColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-destructiveColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-grayColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-grayColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-grayColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-activeColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-activeColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-activeColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-focusColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-focusColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-focusColor">
+        
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+## Link Colors
+
+<table class="theme-palette__table">
+  <thead>
+    <tr>
+      <th>CSS Variable</th>
+      <th class="light">Light Theme</th>
+      <th class="dark">Dark Theme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="theme-palette__title">
+        --color-linkColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-linkColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-linkColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-linkHoverColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-linkHoverColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-linkHoverColor">
+        
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="theme-palette__title">
+        --color-linkActiveColor
+      </td>
+      <td class="light">
+        <div class="theme-palette color-linkActiveColor">
+        
+        </div>
+      </td>
+      <td class="dark">
+        <div class="theme-palette color-linkActiveColor">
+        
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

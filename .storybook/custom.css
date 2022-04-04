@@ -1,0 +1,42 @@
+.sbdocs-wrapper,
+table tr:nth-of-type(2n) {
+  background: transparent !important;
+}
+.sbdocs,
+.sbdocs-p,
+.sbdocs-h1,
+.sbdocs-h2,
+.sbdocs-h3,
+.sbdocs-h4,
+.sbdocs-h5,
+.sbdocs-h6,
+.sbdocs-title,
+.sbdocs-table th {
+  color: var(--color-textColor) !important;
+}
+
+.docs-story {
+  background: var(--color-backgroundColor);
+}
+
+.docblock-code-toggle {
+  color: var(--color-buttonPrimaryColor) !important;
+  background: var(--color-buttonPrimaryBackgroundColor)  !important;
+}
+
+.dark table tr {
+  border-top: 1px solid var(--color-gray-500);
+}
+
+.dark table tr th,
+.dark table tr td {
+  border: 1px solid var(--color-gray-500);
+}
+
+.dark .sbdocs-h2 {
+  border-color: var(--color-gray-500);
+}
+
+.dark, .light {
+  background: var(--color-backgroundColor);
+}

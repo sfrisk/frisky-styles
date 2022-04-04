@@ -1,0 +1,1159 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Design Tokens/Design Tokens" />
+
+<style>{`
+
+  .palette {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .palette__title {
+    font-weight: bold;
+    display: block;
+  }
+
+  .palette__var {
+    font-style: italic;
+    white-space: nowrap;
+    display: block;
+  }
+
+  .palette__item {
+    flex: 1;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    justify-content: flex-end;
+    padding: 10px;
+    min-width: 120px;
+  }
+
+  .palette__item__var {
+    font-size: 16px;
+  }
+
+  .palette__item__var {
+    font-size: 24px;
+  }
+
+  .palette__item--white-text,
+  .palette__item--white-text span {
+    color: var(--color-gray-000) !important;
+  }
+
+  .palette__item--black-text,
+  .palette__item--black-text span {
+    color: var(--color-gray-900) !important;
+  }
+
+  .color-gray-000 {
+    background: var(--color-gray-000);
+  }
+
+  .color-gray-100 {
+    background: var(--color-gray-100);
+  }
+
+  .color-gray-200 {
+    background: var(--color-gray-200);
+  }
+
+  .color-gray-300 {
+    background: var(--color-gray-300);
+  }
+
+  .color-gray-400 {
+    background: var(--color-gray-400);
+  }
+
+  .color-gray-500 {
+    background: var(--color-gray-500);
+  }
+
+  .color-gray-600 {
+    background: var(--color-gray-600);
+  }
+
+  .color-gray-700 {
+    background: var(--color-gray-700);
+  }
+
+  .color-gray-800 {
+    background: var(--color-gray-800);
+  }
+
+  .color-gray-900 {
+    background: var(--color-gray-900);
+  }
+
+  .color-purple-100 {
+    background: var(--color-purple-100);
+  }
+
+  .color-purple-200 {
+    background: var(--color-purple-200);
+  }
+
+  .color-purple-300 {
+    background: var(--color-purple-300);
+  }
+
+  .color-purple-400 {
+    background: var(--color-purple-400);
+  }
+
+  .color-purple-500 {
+    background: var(--color-purple-500);
+  }
+
+  .color-purple-600 {
+    background: var(--color-purple-600);
+  }
+
+  .color-purple-700 {
+    background: var(--color-purple-700);
+  }
+
+  .color-purple-800 {
+    background: var(--color-purple-800);
+  }
+
+  .color-purple-900 {
+    background: var(--color-purple-900);
+  }
+
+  .color-blue-100 {
+    background: var(--color-blue-100);
+  }
+
+  .color-blue-200 {
+    background: var(--color-blue-200);
+  }
+
+  .color-blue-300 {
+    background: var(--color-blue-300);
+  }
+
+  .color-blue-400 {
+    background: var(--color-blue-400);
+  }
+
+  .color-blue-500 {
+    background: var(--color-blue-500);
+  }
+
+  .color-blue-600 {
+    background: var(--color-blue-600);
+  }
+
+  .color-blue-700 {
+    background: var(--color-blue-700);
+  }
+
+  .color-blue-800 {
+    background: var(--color-blue-800);
+  }
+
+  .color-blue-900 {
+    background: var(--color-blue-900);
+  }
+
+  .color-cyan-100 {
+    background: var(--color-cyan-100);
+  }
+
+  .color-cyan-200 {
+    background: var(--color-cyan-200);
+  }
+
+  .color-cyan-300 {
+    background: var(--color-cyan-300);
+  }
+
+  .color-cyan-400 {
+    background: var(--color-cyan-400);
+  }
+
+  .color-cyan-500 {
+    background: var(--color-cyan-500);
+  }
+
+  .color-cyan-600 {
+    background: var(--color-cyan-600);
+  }
+
+  .color-cyan-700 {
+    background: var(--color-cyan-700);
+  }
+
+  .color-cyan-800 {
+    background: var(--color-cyan-800);
+  }
+
+  .color-cyan-900 {
+    background: var(--color-cyan-900);
+  }
+
+  .color-aqua-100 {
+    background: var(--color-aqua-100);
+  }
+
+  .color-aqua-200 {
+    background: var(--color-aqua-200);
+  }
+
+  .color-aqua-300 {
+    background: var(--color-aqua-300);
+  }
+
+  .color-aqua-400 {
+    background: var(--color-aqua-400);
+  }
+
+  .color-aqua-500 {
+    background: var(--color-aqua-500);
+  }
+
+  .color-aqua-600 {
+    background: var(--color-aqua-600);
+  }
+
+  .color-aqua-700 {
+    background: var(--color-aqua-700);
+  }
+
+  .color-aqua-800 {
+    background: var(--color-aqua-800);
+  }
+
+  .color-aqua-900 {
+    background: var(--color-aqua-900);
+  }
+
+  .color-green-100 {
+    background: var(--color-green-100);
+  }
+
+  .color-green-200 {
+    background: var(--color-green-200);
+  }
+
+  .color-green-300 {
+    background: var(--color-green-300);
+  }
+
+  .color-green-400 {
+    background: var(--color-green-400);
+  }
+
+  .color-green-500 {
+    background: var(--color-green-500);
+  }
+
+  .color-green-600 {
+    background: var(--color-green-600);
+  }
+
+  .color-green-700 {
+    background: var(--color-green-700);
+  }
+
+  .color-green-800 {
+    background: var(--color-green-800);
+  }
+
+  .color-green-900 {
+    background: var(--color-green-900);
+  }
+
+  .color-yellow-100 {
+    background: var(--color-yellow-100);
+  }
+
+  .color-yellow-200 {
+    background: var(--color-yellow-200);
+  }
+
+  .color-yellow-300 {
+    background: var(--color-yellow-300);
+  }
+
+  .color-yellow-400 {
+    background: var(--color-yellow-400);
+  }
+
+  .color-yellow-500 {
+    background: var(--color-yellow-500);
+  }
+
+  .color-yellow-600 {
+    background: var(--color-yellow-600);
+  }
+
+  .color-yellow-700 {
+    background: var(--color-yellow-700);
+  }
+
+  .color-yellow-800 {
+    background: var(--color-yellow-800);
+  }
+
+  .color-yellow-900 {
+    background: var(--color-yellow-900);
+  }
+
+  .color-orange-100 {
+    background: var(--color-orange-100);
+  }
+
+  .color-orange-200 {
+    background: var(--color-orange-200);
+  }
+
+  .color-orange-300 {
+    background: var(--color-orange-300);
+  }
+
+  .color-orange-400 {
+    background: var(--color-orange-400);
+  }
+
+  .color-orange-500 {
+    background: var(--color-orange-500);
+  }
+
+  .color-orange-600 {
+    background: var(--color-orange-600);
+  }
+
+  .color-orange-700 {
+    background: var(--color-orange-700);
+  }
+
+  .color-orange-800 {
+    background: var(--color-orange-800);
+  }
+
+  .color-orange-900 {
+    background: var(--color-orange-900);
+  }
+
+  .color-red-100 {
+    background: var(--color-red-100);
+  }
+
+  .color-red-200 {
+    background: var(--color-red-200);
+  }
+
+  .color-red-300 {
+    background: var(--color-red-300);
+  }
+
+  .color-red-400 {
+    background: var(--color-red-400);
+  }
+
+  .color-red-500 {
+    background: var(--color-red-500);
+  }
+
+  .color-red-600 {
+    background: var(--color-red-600);
+  }
+
+  .color-red-700 {
+    background: var(--color-red-700);
+  }
+
+  .color-red-800 {
+    background: var(--color-red-800);
+  }
+
+  .color-red-900 {
+    background: var(--color-red-900);
+  }
+
+`}</style>
+
+# Design Tokens
+
+We use css variables as a means of defining tokens for both light and dark themes.
+
+## Colors
+
+### Grayscale
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Swatches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <span class="palette__title">colors.gray</span>
+        <span class="palette__var">--color-gray-***</span>
+      </td>
+      <td>
+        <div class="palette">
+          <div class="palette__item palette__item--black-text color-gray-000">
+            <span class="palette__item__var" title="--color-gray-000">
+              000
+            </span>
+            <span class="palette__item__hex">
+              #fbf8f9
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-gray-100">
+            <span class="palette__item__var" title="--color-gray-100">
+              100
+            </span>
+            <span class="palette__item__hex">
+              #e2e0e1
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-gray-200">
+            <span class="palette__item__var" title="--color-gray-200">
+              200
+            </span>
+            <span class="palette__item__hex">
+              #b0aeaf
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-gray-300">
+            <span class="palette__item__var" title="--color-gray-300">
+              300
+            </span>
+            <span class="palette__item__hex">
+              #979596
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-gray-400">
+            <span class="palette__item__var" title="--color-gray-400">
+              400
+            </span>
+            <span class="palette__item__hex">
+              #7e7d7d
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-gray-500">
+            <span class="palette__item__var" title="--color-gray-500">
+              500
+            </span>
+            <span class="palette__item__hex">
+              #656464
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-gray-600">
+            <span class="palette__item__var" title="--color-gray-600">
+              600
+            </span>
+            <span class="palette__item__hex">
+              #4c4c4c
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-gray-700">
+            <span class="palette__item__var" title="--color-gray-700">
+              700
+            </span>
+            <span class="palette__item__hex">
+              #333233
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-gray-800">
+            <span class="palette__item__var" title="--color-gray-800">
+              800
+            </span>
+            <span class="palette__item__hex">
+              #1a1a1a
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-gray-900">
+            <span class="palette__item__var" title="--color-gray-900">
+              900
+            </span>
+            <span class="palette__item__hex">
+              #010101
+            </span>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### Color Swatches
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Swatches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <span class="palette__title">colors.purple</span>
+        <span class="palette__var">--color-purple-***</span>
+      </td>
+      <td>
+        <div class="palette">
+          <div class="palette__item palette__item--black-text color-purple-100">
+            <span class="palette__item__var" title="--color-purple-100">
+              100
+            </span>
+            <span class="palette__item__hex">
+              #e4d7ea
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-purple-200">
+            <span class="palette__item__var" title="--color-purple-200">
+              200
+            </span>
+            <span class="palette__item__hex">
+              #ceb6dc
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-purple-300">
+            <span class="palette__item__var" title="--color-purple-300">
+              300
+            </span>
+            <span class="palette__item__hex">
+              #b795cd
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-purple-400">
+            <span class="palette__item__var" title="--color-purple-400">
+              400
+            </span>
+            <span class="palette__item__hex">
+              #a175c0
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-purple-500">
+            <span class="palette__item__var" title="--color-purple-500">
+              500
+            </span>
+            <span class="palette__item__hex">
+              #8a53b0
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-purple-600">
+            <span class="palette__item__var" title="--color-purple-600">
+              600
+            </span>
+            <span class="palette__item__hex">
+              #6f438d
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-purple-700">
+            <span class="palette__item__var" title="--color-purple-700">
+              700
+            </span>
+            <span class="palette__item__hex">
+              #53326a
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-purple-800">
+            <span class="palette__item__var" title="--color-purple-800">
+              800
+            </span>
+            <span class="palette__item__hex">
+              #382247
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-purple-900">
+            <span class="palette__item__var" title="--color-purple-900">
+              900
+            </span>
+            <span class="palette__item__hex">
+              #1c1124
+            </span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="palette__title">colors.blue</span>
+        <span class="palette__var">--color-blue-***</span>
+      </td>
+      <td>
+        <div class="palette">
+          <div class="palette__item palette__item--black-text color-blue-100">
+            <span class="palette__item__var" title="--color-blue-100">
+              100
+            </span>
+            <span class="palette__item__hex">
+              #e2e2ec
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-blue-200">
+            <span class="palette__item__var" title="--color-blue-200">
+              200
+            </span>
+            <span class="palette__item__hex">
+              #c9cbdf
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-blue-300">
+            <span class="palette__item__var" title="--color-blue-300">
+              300
+            </span>
+            <span class="palette__item__hex">
+              #b2b8d4
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-blue-400">
+            <span class="palette__item__var" title="--color-blue-400">
+              400
+            </span>
+            <span class="palette__item__hex">
+              #98a0c5
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-blue-500">
+            <span class="palette__item__var" title="--color-blue-500">
+              500
+            </span>
+            <span class="palette__item__hex">
+              #7e88b7
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-blue-600">
+            <span class="palette__item__var" title="--color-blue-600">
+              600
+            </span>
+            <span class="palette__item__hex">
+              #656d93
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-blue-700">
+            <span class="palette__item__var" title="--color-blue-700">
+              700
+            </span>
+            <span class="palette__item__hex">
+              #4c526e
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-blue-800">
+            <span class="palette__item__var" title="--color-blue-800">
+              800
+            </span>
+            <span class="palette__item__hex">
+              #33374a
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-blue-900">
+            <span class="palette__item__var" title="--color-blue-900">
+              900
+            </span>
+            <span class="palette__item__hex">
+              #1a1c25
+            </span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="palette__title">colors.cyan</span>
+        <span class="palette__var">--color-cyan-***</span>
+      </td>
+      <td>
+        <div class="palette">
+          <div class="palette__item palette__item--black-text color-cyan-100">
+            <span class="palette__item__var" title="--color-cyan-100">
+              100
+            </span>
+            <span class="palette__item__hex">
+              #e0eff5
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-cyan-200">
+            <span class="palette__item__var" title="--color-cyan-200">
+              200
+            </span>
+            <span class="palette__item__hex">
+              #c5e7f1
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-cyan-300">
+            <span class="palette__item__var" title="--color-cyan-300">
+              300
+            </span>
+            <span class="palette__item__hex">
+              #abe1ef
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-cyan-400">
+            <span class="palette__item__var" title="--color-cyan-400">
+              400
+            </span>
+            <span class="palette__item__hex">
+              #8fd7ea
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-cyan-500">
+            <span class="palette__item__var" title="--color-cyan-500">
+              500
+            </span>
+            <span class="palette__item__hex">
+              #73cde5
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-cyan-600">
+            <span class="palette__item__var" title="--color-cyan-600">
+              600
+            </span>
+            <span class="palette__item__hex">
+              #5ca4b7
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-cyan-700">
+            <span class="palette__item__var" title="--color-cyan-700">
+              700
+            </span>
+            <span class="palette__item__hex">
+              #457b8a
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-cyan-800">
+            <span class="palette__item__var" title="--color-cyan-800">
+              800
+            </span>
+            <span class="palette__item__hex">
+              #2f535c
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-cyan-900">
+            <span class="palette__item__var" title="--color-cyan-900">
+              900
+            </span>
+            <span class="palette__item__hex">
+              #182a2f
+            </span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="palette__title">colors.aqua</span>
+        <span class="palette__var">--color-aqua-***</span>
+      </td>
+      <td>
+        <div class="palette">
+          <div class="palette__item palette__item--black-text color-aqua-100">
+            <span class="palette__item__var" title="--color-aqua-100">
+              100
+            </span>
+            <span class="palette__item__hex">
+              #d8e4e1
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-aqua-200">
+            <span class="palette__item__var" title="--color-aqua-200">
+              200
+            </span>
+            <span class="palette__item__hex">
+              #b5d0c9
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-aqua-300">
+            <span class="palette__item__var" title="--color-aqua-300">
+              300
+            </span>
+            <span class="palette__item__hex">
+              #93bfb4
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-aqua-400">
+            <span class="palette__item__var" title="--color-aqua-400">
+              400
+            </span>
+            <span class="palette__item__hex">
+              #6fa99b
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-aqua-500">
+            <span class="palette__item__var" title="--color-aqua-500">
+              500
+            </span>
+            <span class="palette__item__hex">
+              #4b9482
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-aqua-600">
+            <span class="palette__item__var" title="--color-aqua-600">
+              600
+            </span>
+            <span class="palette__item__hex">
+              #3c7768
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-aqua-700">
+            <span class="palette__item__var" title="--color-aqua-700">
+              700
+            </span>
+            <span class="palette__item__hex">
+              #2d594e
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-aqua-800">
+            <span class="palette__item__var" title="--color-aqua-800">
+              800
+            </span>
+            <span class="palette__item__hex">
+              #1f3c35
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-aqua-900">
+            <span class="palette__item__var" title="--color-aqua-900">
+              900
+            </span>
+            <span class="palette__item__hex">
+              #101e1b
+            </span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="palette__title">colors.green</span>
+        <span class="palette__var">--color-green-***</span>
+      </td>
+      <td>
+        <div class="palette">
+          <div class="palette__item palette__item--black-text color-green-100">
+            <span class="palette__item__var" title="--color-green-100">
+              100
+            </span>
+            <span class="palette__item__hex">
+              #dae0d2
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-green-200">
+            <span class="palette__item__var" title="--color-green-200">
+              200
+            </span>
+            <span class="palette__item__hex">
+              #bac9ab
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-green-300">
+            <span class="palette__item__var" title="--color-green-300">
+              300
+            </span>
+            <span class="palette__item__hex">
+              #9bb487
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-green-400">
+            <span class="palette__item__var" title="--color-green-400">
+              400
+            </span>
+            <span class="palette__item__hex">
+              #799b5f
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-green-500">
+            <span class="palette__item__var" title="--color-green-500">
+              500
+            </span>
+            <span class="palette__item__hex">
+              #588237
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-green-600">
+            <span class="palette__item__var" title="--color-green-600">
+              600
+            </span>
+            <span class="palette__item__hex">
+              #47682c
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-green-700">
+            <span class="palette__item__var" title="--color-green-700">
+              700
+            </span>
+            <span class="palette__item__hex">
+              #354e21
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-green-800">
+            <span class="palette__item__var" title="--color-green-800">
+              800
+            </span>
+            <span class="palette__item__hex">
+              #243517
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-green-900">
+            <span class="palette__item__var" title="--color-green-900">
+              900
+            </span>
+            <span class="palette__item__hex">
+              #121b0c
+            </span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="palette__title">colors.yellow</span>
+        <span class="palette__var">--color-yellow-***</span>
+      </td>
+      <td>
+        <div class="palette">
+          <div class="palette__item palette__item--black-text color-yellow-100">
+            <span class="palette__item__var" title="--color-yellow-100">
+              100
+            </span>
+            <span class="palette__item__hex">
+              #f4ecd8
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-yellow-200">
+            <span class="palette__item__var" title="--color-yellow-200">
+              200
+            </span>
+            <span class="palette__item__hex">
+              #ede0b7
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-yellow-300">
+            <span class="palette__item__var" title="--color-yellow-300">
+              300
+            </span>
+            <span class="palette__item__hex">
+              #e5d596
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-yellow-400">
+            <span class="palette__item__var" title="--color-yellow-400">
+              400
+            </span>
+            <span class="palette__item__hex">
+              #dec975
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-yellow-500">
+            <span class="palette__item__var" title="--color-yellow-500">
+              500
+            </span>
+            <span class="palette__item__hex">
+              #d7bd54
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-yellow-600">
+            <span class="palette__item__var" title="--color-yellow-600">
+              600
+            </span>
+            <span class="palette__item__hex">
+              #ac9743
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-yellow-700">
+            <span class="palette__item__var" title="--color-yellow-700">
+              700
+            </span>
+            <span class="palette__item__hex">
+              #817233
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-yellow-800">
+            <span class="palette__item__var" title="--color-yellow-800">
+              800
+            </span>
+            <span class="palette__item__hex">
+              #574c22
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-yellow-900">
+            <span class="palette__item__var" title="--color-yellow-900">
+              900
+            </span>
+            <span class="palette__item__hex">
+              #2c2712
+            </span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="palette__title">colors.orange</span>
+        <span class="palette__var">--color-orange-***</span>
+      </td>
+      <td>
+        <div class="palette">
+          <div class="palette__item palette__item--black-text color-orange-100">
+            <span class="palette__item__var" title="--color-orange-100">
+              100
+            </span>
+            <span class="palette__item__hex">
+              #ece0cf
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-orange-200">
+            <span class="palette__item__var" title="--color-orange-200">
+              200
+            </span>
+            <span class="palette__item__hex">
+              #ddc9a6
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-orange-300">
+            <span class="palette__item__var" title="--color-orange-300">
+              300
+            </span>
+            <span class="palette__item__hex">
+              #cdb17c
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-orange-400">
+            <span class="palette__item__var" title="--color-orange-400">
+              400
+            </span>
+            <span class="palette__item__hex">
+              #be9a53
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-orange-500">
+            <span class="palette__item__var" title="--color-orange-500">
+              500
+            </span>
+            <span class="palette__item__hex">
+              #af8229
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-orange-600">
+            <span class="palette__item__var" title="--color-orange-600">
+              600
+            </span>
+            <span class="palette__item__hex">
+              #8c6821
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-orange-700">
+            <span class="palette__item__var" title="--color-orange-700">
+              700
+            </span>
+            <span class="palette__item__hex">
+              #694e19
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-orange-800">
+            <span class="palette__item__var" title="--color-orange-800">
+              800
+            </span>
+            <span class="palette__item__hex">
+              #473511
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-orange-900">
+            <span class="palette__item__var" title="--color-orange-900">
+              900
+            </span>
+            <span class="palette__item__hex">
+              #241b09
+            </span>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="palette__title">colors.red</span>
+        <span class="palette__var">--color-red-***</span>
+      </td>
+      <td>
+        <div class="palette">
+          <div class="palette__item palette__item--black-text color-red-100">
+            <span class="palette__item__var" title="--color-red-100">
+              100
+            </span>
+            <span class="palette__item__hex">
+              #e7d6d6
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-red-200">
+            <span class="palette__item__var" title="--color-red-200">
+              200
+            </span>
+            <span class="palette__item__hex">
+              #d3b3b3
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-red-300">
+            <span class="palette__item__var" title="--color-red-300">
+              300
+            </span>
+            <span class="palette__item__hex">
+              #bf9191
+            </span>
+          </div>
+          <div class="palette__item palette__item--black-text color-red-400">
+            <span class="palette__item__var" title="--color-red-400">
+              400
+            </span>
+            <span class="palette__item__hex">
+              #ab6e6e
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-red-500">
+            <span class="palette__item__var" title="--color-red-500">
+              500
+            </span>
+            <span class="palette__item__hex">
+              #974c4b
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-red-600">
+            <span class="palette__item__var" title="--color-red-600">
+              600
+            </span>
+            <span class="palette__item__hex">
+              #793d3c
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-red-700">
+            <span class="palette__item__var" title="--color-red-700">
+              700
+            </span>
+            <span class="palette__item__hex">
+              #5b2e2d
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-red-800">
+            <span class="palette__item__var" title="--color-red-800">
+              800
+            </span>
+            <span class="palette__item__hex">
+              #3d1f1f
+            </span>
+          </div>
+          <div class="palette__item palette__item--white-text color-red-900">
+            <span class="palette__item__var" title="--color-red-900">
+              900
+            </span>
+            <span class="palette__item__hex">
+              #1f1010
+            </span>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
