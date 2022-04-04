@@ -23,3 +23,5 @@ pnpm-debug.log*
 *.sw?
 
 build-storybook.log
+
+.env
