@@ -49,6 +49,7 @@ export default defineComponent({
     border-radius: 3px;
     padding: 4px;
     font-weight: 600;
+    font-size: 16px;
 
     &-primary {
       --buttonBackground: var(--color-buttonPrimaryBackgroundColor);
